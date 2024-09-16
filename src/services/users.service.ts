@@ -41,7 +41,7 @@ export const serviceEditUserId = async (id: string, updatedUser: Partial<Omit<Us
   try {
     const userRef = doc(db, "usuarios", id);
     await updateDoc(userRef, updatedUser);
-    return true; // Retorna true si se actualizó correctamente
+    return true;
   } catch (e) {
     console.error("Error al editar el usuario: ", e);
     throw new Error("No se pudo editar el usuario.");

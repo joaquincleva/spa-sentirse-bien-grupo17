@@ -72,7 +72,6 @@ export const UserAuthForm: React.FC<SignInFormProps> = ({
       onSubmit: async (values) => {
         setIsLoading(true);
         try {
-          console.log(values);
           if (
             users.some(
               (item) =>

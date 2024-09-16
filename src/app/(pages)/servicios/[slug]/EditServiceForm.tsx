@@ -69,8 +69,6 @@ const EditServiceForm = ({
         setService(serviceAModificar);
         setEditMode(false);
       } catch (e) {
-        console.log("Error al modificar servicio");
-
         toast({
           description: "No se ha podido modificar el servicio.",
         });

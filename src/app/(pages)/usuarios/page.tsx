@@ -27,7 +27,6 @@ const Pagina = () => {
   const {toast} = useToast()
 
   useEffect(() => {
-    console.log(authUser);
     const timer = setTimeout(() => {
       if (!authUser || authUser?.rol !== "admin") {
         router.push("/");

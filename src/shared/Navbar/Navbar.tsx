@@ -28,7 +28,6 @@ const Navbar = () => {
   const [openMenuMobile, setOpenMenuMobile] = useState(false);
   const { authUser, setAuthUser } = useAuthContext();
   const pathname = usePathname()
-  console.log(pathname)
 
   return (
     <nav className="border-b-2">

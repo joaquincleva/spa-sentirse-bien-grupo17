@@ -49,7 +49,6 @@ export const serviceDeleteTurno = async (id: string) => {
   try {
     const consultaRef = doc(db, "turnos", id);
     await deleteDoc(consultaRef);
-    console.log(`Consulta con ID ${id} eliminada exitosamente.`);
   } catch (e) {
     console.error("Error al eliminar la consulta: ", e);
     throw e;

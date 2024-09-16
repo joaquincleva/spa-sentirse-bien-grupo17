@@ -111,7 +111,6 @@ export const UserCreateAccountForm: React.FC<CreateAccountForm> = ({
           JSON.stringify({ ...userData, rol: "usuario", id: userId })
         );
         router.push("/");
-        console.log("Usuario creado con ID: ", userId);
       } catch (error) {
         console.error("Error al crear el usuario:", error);
 

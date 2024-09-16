@@ -56,7 +56,6 @@ const Page = ({ params }: any) => {
   const router = useRouter();
 
   useEffect(() => {
-    console.log(authUser);
     const timer = setTimeout(() => {
       if (!authUser) {
         router.push("/auth/login");
@@ -143,7 +142,6 @@ const Page = ({ params }: any) => {
     try {
       await serviceCreateTurno(newTurno);
       const responseTurnos = await serviceGetAllTurnos();
-      console.log("me ejecuto");
       setTurnos(responseTurnos);
     } catch (e) {
       console.error("Error solicitando el turno", e);
@@ -191,7 +189,6 @@ const Page = ({ params }: any) => {
               </h2>
               <div className="grid lg:grid-cols-10 grid-cols-4 gap-4">
                 {horariosDisponibles.map((horario, index) => {
-                  // Verificar si ya existe un turno en este horario
                   const isTurnoReservado = turnos.some((turno) => {
                     const fechaEnSegundos = getTime(selectedDate ?? 0) / 1000;
                     return (
@@ -227,7 +224,7 @@ const Page = ({ params }: any) => {
                         isTurnoReservadoPorUser
                           ? false
                           : isTurnoReservado
-                      } // Si quieres deshabilitar el botón si el turno ya está reservado
+                      }
                     >
                       {horario.label}
                     </Button>

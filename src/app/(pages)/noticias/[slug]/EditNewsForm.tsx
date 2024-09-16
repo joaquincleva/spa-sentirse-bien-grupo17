@@ -37,8 +37,6 @@ const EditNewsForm = ({
   setNoticia,
 }: EditNewsProps) => {
   const [loading, setLoading] = useState<boolean>(false);
-  console.log(noticia)
-
   const initialValues = {
     id: noticia?.id ?? "",
     imagen: noticia?.imagen ?? "",
@@ -53,7 +51,6 @@ const EditNewsForm = ({
     initialValues: initialValues,
     validationSchema: validationSchemaEditNews,
     onSubmit: async (values) => {
-      console.log(values)
       setLoading(true);
       let noticiaAModificar = {
         imagen: formik.values.imagen,
@@ -66,8 +63,6 @@ const EditNewsForm = ({
         setNoticia({...noticiaAModificar, id: noticia?.id??""});
         setEditMode(false);
       } catch (e) {
-        console.log("Error al modificar noticia");
-        
         toast({
           description: "No se ha podido modificar la noticia."
         })

@@ -21,7 +21,6 @@ export const serviceDeleteConsulta = async (id: string): Promise<void> => {
   try {
     const consultaRef = doc(db, "consultas", id);
     await deleteDoc(consultaRef);
-    console.log(`Consulta con ID ${id} eliminada exitosamente.`);
   } catch (e) {
     console.error("Error al eliminar la consulta: ", e);
     throw e;
@@ -35,7 +34,6 @@ export const serviceAnswerConsulta = async (id: string, respuesta: string, usuar
       publish_date_respuesta: serverTimestamp(),
       usuario_respuesta,
     });
-    console.log(`Consulta con ID ${id} respondida exitosamente.`);
   } catch (e) {
     console.error("Error al responder la consulta: ", e);
     throw e;
@@ -66,7 +64,6 @@ export const serviceAddConsulta = async (contenido: string, titulo: string, usua
       publish_date_respuesta: null,
       usuario_respuesta: "",
     });
-    console.log("Consulta agregada exitosamente.");
   } catch (e) {
     console.error("Error al agregar la consulta: ", e);
     throw e;

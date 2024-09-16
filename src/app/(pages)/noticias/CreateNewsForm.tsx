@@ -45,7 +45,6 @@ const CreateNewsForm = ({
     initialValues: initialValues,
     validationSchema: validationSchemaEditNews,
     onSubmit: async (values) => {
-      console.log(values)
       setLoading(true);
       let noticiaAModificar = {
         id: "",
@@ -58,7 +57,6 @@ const CreateNewsForm = ({
         await serviceCreateNews(noticiaAModificar);
         setEditMode(false);
       } catch (e) {
-        console.log("Error al crear noticia");
         toast({
           description: "No se ha podido crear la noticias."
         })

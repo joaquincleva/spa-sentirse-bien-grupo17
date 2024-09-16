@@ -1,4 +1,3 @@
-// src/components/AddConsultaModal.tsx
 import React, { useState } from "react";
 
 interface AddConsultaModalProps {

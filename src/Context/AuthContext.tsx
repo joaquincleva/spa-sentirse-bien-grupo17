@@ -14,10 +14,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
 }) => {
   const [authUser, setAuthUser] = useState<User | null>(null);
   useEffect(() => {
-    // Recuperar el objeto user desde localStorage
     const storedUser = localStorage.getItem('user');
-
-    // Si existe, setearlo en el estado
     if (storedUser) {
       setAuthUser(JSON.parse(storedUser));
     }
